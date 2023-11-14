@@ -28,3 +28,13 @@
 .sea_border {
     border: 1px solid #518fab;
 }
+
+
+
+/* POST PAGE  */
+
+.create_container{
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+}

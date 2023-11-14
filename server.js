@@ -13,7 +13,6 @@ const {home} = require("./controller/homeController")
 const postsRouter = require("./routers/posts")
 
 //Create a static file : public
-
 app.use(express.static("public"))
 app.use(express.static("css"))
 
