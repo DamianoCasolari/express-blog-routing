@@ -5,6 +5,9 @@ const dotenv = require("dotenv")
 
 //Configure external packs
 dotenv.config()
+
+
+//Create istance of express
 const app = express()
 
 

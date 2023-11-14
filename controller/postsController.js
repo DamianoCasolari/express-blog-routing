@@ -35,6 +35,9 @@ function show(req, res) {
     if (singlePost.length == 0) {
         res.type("json").send("Il post cercato non esiste")
     }
+    singlePost[0].image_url = "/imgs/posts/" + singlePost[0].image
+    singlePost[0].image_download_url = `/posts/${singlePost[0].slug}/download` 
+
     res.type("json").send(singlePost[0])
 }
 
@@ -57,8 +60,10 @@ function download(req, res) {
     if (singlePost.length == 0) {
         res.send("ERRORE 404 - File non registrato nei nostri database")
     }
-    const imgPath = path.resolve(__dirname , ".." ,"public" , "imgs" , "posts" , singlePost[0].image) 
+    const postSlugNoSlash = encodeURIComponent(singlePost[0].image)
+    const imgPath = path.resolve(__dirname , ".." ,"public" , "imgs" , "posts" , postSlugNoSlash) 
 
+    console.log(imgPath);
     res.download(imgPath)
 
 }
