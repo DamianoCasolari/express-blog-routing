@@ -8,12 +8,16 @@ function index(req, res) {
         html: () => {
             const htmlContent = []
             htmlContent.push("<ul style='list-style:none'>")
+
             for (const post of posts) {
+                const slug = post.slug
                 htmlContent.push(`
                     <li>
                     <h3>${post.title}</h3>
                     <p>${post.content}</p>
                     <img src="/imgs/posts/${post.image}" alt="Immagine del post : ${post.title}">
+                    <br>
+                    <a href="/posts/${slug}">Informazioni più dettagliate</a>
                     </li>`)
 
             }
